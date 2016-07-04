@@ -2,18 +2,17 @@
 
 require '../vendor/autoload.php';
 
+use App\Controller\ControllerResolver;
+use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\HttpFoundation\RequestStack;
+use Symfony\Component\HttpKernel\HttpKernel;
+use Symfony\Component\HttpKernel\EventListener\RouterListener;
 use Symfony\Component\Config\FileLocator;
 use Symfony\Component\Routing\RequestContext;
 use Symfony\Component\Routing\Matcher\UrlMatcher;
 use Symfony\Component\Routing\Loader\PhpFileLoader;
 use Symfony\Component\Routing\Generator\UrlGenerator;
-use Symfony\Component\HttpFoundation\Request;
-use Symfony\Component\HttpFoundation\RequestStack;
-use Symfony\Component\HttpKernel\HttpKernel;
-use App\Controller\ControllerResolver;
-use Symfony\Component\HttpKernel\EventListener\RouterListener;
 use Symfony\Component\EventDispatcher\ContainerAwareEventDispatcher;
-use Symfony\Component\DependencyInjection\Reference;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\Templating\TemplateNameParser;
 use Symfony\Component\Templating\Loader\FilesystemLoader;
